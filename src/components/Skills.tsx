@@ -1,8 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, Cloud, Wrench } from "lucide-react";
+import { Code, Database, Cloud, Wrench, Star } from "lucide-react";
 
 const Skills = () => {
+  // Helper function to convert percentage to star rating (1-5 stars)
+  const getStarRating = (level: number) => {
+    if (level >= 90) return 5;
+    if (level >= 80) return 4;
+    if (level >= 70) return 3;
+    if (level >= 60) return 2;
+    return 1;
+  };
+
+  // Helper function to render stars
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <Star
+        key={index}
+        className={`h-4 w-4 ${
+          index < rating 
+            ? "fill-primary text-primary" 
+            : "text-muted-foreground/30"
+        } transition-colors duration-300`}
+      />
+    ));
+  };
+
   const skillCategories = [
     {
       title: "Backend Development",
@@ -79,16 +102,15 @@ const Skills = () => {
               <CardContent>
                 <div className="space-y-4">
                   {category.skills.map((skill, idx) => (
-                    <div key={idx} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-secondary rounded-full h-2">
-                        <div 
-                          className="bg-gradient-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
+                    <div key={idx} className="flex justify-between items-center py-2">
+                      <span className="text-sm font-medium">{skill.name}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="flex gap-1">
+                          {renderStars(getStarRating(skill.level))}
+                        </div>
+                        <span className="text-xs text-muted-foreground/60 min-w-[35px]">
+                          {skill.level}%
+                        </span>
                       </div>
                     </div>
                   ))}
