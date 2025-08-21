@@ -7,7 +7,12 @@ export interface EmailData {
 
 export async function sendContactEmail(data: EmailData) {
   try {
-    const response = await fetch('http://localhost:3001/api/send-email', {
+    // Use relative URL for API route - works both locally and on Vercel
+    const apiUrl = process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3001/api/send-email'  // Local development
+      : '/api/send-email';  // Production (Vercel)
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

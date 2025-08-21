@@ -57,7 +57,19 @@ This project uses Resend for sending emails from the contact form. To set up:
 4. Add your Resend API key to the `.env` file:
    ```
    VITE_RESEND_API_KEY=your_actual_api_key_here
+   RESEND_API_KEY=your_actual_api_key_here
    ```
+
+## Deployment on Vercel
+
+This project is configured to deploy on Vercel with serverless API routes:
+
+1. **Connect your GitHub repository** to Vercel
+2. **Set environment variables** in Vercel dashboard:
+   - `RESEND_API_KEY` = your Resend API key
+3. **Deploy** - Vercel will automatically build and deploy your project
+
+The contact form will work seamlessly in production using Vercel's serverless functions.
 
 **Edit a file directly in GitHub**
 
