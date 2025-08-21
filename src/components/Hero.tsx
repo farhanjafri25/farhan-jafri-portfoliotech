@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -53,13 +54,28 @@ const Hero = () => {
             </Button>
             
             <div className="flex gap-3">
-              <Button variant="outline" size="icon" className="hover:bg-primary/10">
+              <Button
+                variant="outline"
+                size="icon"
+                className="hover:bg-primary/10"
+                onClick={() => window.open(SOCIAL_LINKS.github, '_blank')}
+              >
                 <Github className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary/10">
+              <Button
+                variant="outline"
+                size="icon"
+                className="hover:bg-primary/10"
+                onClick={() => window.open(SOCIAL_LINKS.linkedin, '_blank')}
+              >
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary/10">
+              <Button
+                variant="outline"
+                size="icon"
+                className="hover:bg-primary/10"
+                onClick={() => window.open(`mailto:${SOCIAL_LINKS.email}`, '_blank')}
+              >
                 <Mail className="h-5 w-5" />
               </Button>
             </div>

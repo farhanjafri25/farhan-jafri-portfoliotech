@@ -32,9 +32,32 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Set up environment variables
+cp .env.example .env
+# Edit .env and add your Resend API key
+
+# Step 5: Start both frontend and backend servers
+npm run dev:full
+
+# Or run them separately:
+# Backend server (for email functionality):
+npm run server
+
+# Frontend development server:
 npm run dev
 ```
+
+## Environment Setup
+
+This project uses Resend for sending emails from the contact form. To set up:
+
+1. Create a [Resend account](https://resend.com)
+2. Get your API key from the [Resend dashboard](https://resend.com/api-keys)
+3. Copy `.env.example` to `.env`
+4. Add your Resend API key to the `.env` file:
+   ```
+   VITE_RESEND_API_KEY=your_actual_api_key_here
+   ```
 
 **Edit a file directly in GitHub**
 
