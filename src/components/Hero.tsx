@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowDown, Github, Linkedin, Mail, Building2, Briefcase } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import profilePicture from "@/assets/profile-picture.jpg";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 const Hero = () => {
@@ -22,6 +24,14 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8">
           <div className="space-y-4">
+            {/* Profile Picture */}
+            <div className="flex justify-center mb-6">
+              <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-glow">
+                <AvatarImage src={profilePicture} alt="Mohd Farhan Jafri" />
+                <AvatarFallback className="text-2xl font-bold">MFJ</AvatarFallback>
+              </Avatar>
+            </div>
+            
             <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm">
               Available for New Opportunities
             </Badge>
@@ -77,6 +87,34 @@ const Hero = () => {
                 onClick={() => window.open(`mailto:${SOCIAL_LINKS.email}`, '_blank')}
               >
                 <Mail className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+          
+          {/* Company Links */}
+          <div className="flex justify-center items-center gap-6 pt-4">
+            <div className="flex items-center gap-2 text-muted-foreground text-sm">
+              <Briefcase className="h-4 w-4" />
+              <span>Previously worked at:</span>
+            </div>
+            <div className="flex gap-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:bg-primary/10 transition-all duration-300"
+                onClick={() => window.open('https://aqueralabs.com', '_blank')}
+              >
+                <Building2 className="h-5 w-5 mr-2" />
+                AqueraLabs
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:bg-primary/10 transition-all duration-300"
+                onClick={() => window.open('https://www.hoodapp.in', '_blank')}
+              >
+                <Building2 className="h-5 w-5 mr-2" />
+                Hood
               </Button>
             </div>
           </div>
