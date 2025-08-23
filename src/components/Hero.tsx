@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowDown, Github, Linkedin, Mail, Building2, Briefcase } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Briefcase, Cpu, Video } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
-import profilePicture from "@/assets/profile-picture.jpg";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 const Hero = () => {
@@ -27,7 +26,10 @@ const Hero = () => {
             {/* Profile Picture */}
             <div className="flex justify-center mb-6">
               <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-glow">
-                <AvatarImage src={profilePicture} alt="Mohd Farhan Jafri" />
+                <AvatarImage
+                  src="/profile-picture-converted.jpg"
+                  alt="Mohd Farhan Jafri"
+                />
                 <AvatarFallback className="text-2xl font-bold">MFJ</AvatarFallback>
               </Avatar>
             </div>
@@ -102,18 +104,18 @@ const Hero = () => {
                 variant="ghost"
                 size="sm"
                 className="hover:bg-primary/10 transition-all duration-300"
-                onClick={() => window.open('https://aqueralabs.com', '_blank')}
+                onClick={() => window.open('https://aquera.com/', '_blank')}
               >
-                <Building2 className="h-5 w-5 mr-2" />
+                <Cpu className="h-5 w-5 mr-2 text-blue-400" />
                 AqueraLabs
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 className="hover:bg-primary/10 transition-all duration-300"
-                onClick={() => window.open('https://www.hoodapp.in', '_blank')}
+                onClick={() => window.open('https://www.hood.live/', '_blank')}
               >
-                <Building2 className="h-5 w-5 mr-2" />
+                <Video className="h-5 w-5 mr-2 text-purple-400" />
                 Hood
               </Button>
             </div>
