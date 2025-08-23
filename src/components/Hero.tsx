@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowDown, Github, Linkedin, Mail, Briefcase, Cpu, Video } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Briefcase } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
@@ -24,13 +24,14 @@ const Hero = () => {
         <div className="text-center space-y-8">
           <div className="space-y-4">
             {/* Profile Picture */}
-            <div className="flex justify-center mb-6">
-              <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-glow">
+            <div className="flex justify-center mb-8">
+              <Avatar className="w-40 h-40 md:w-48 md:h-48 border-4 border-primary/30 shadow-glow hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
                 <AvatarImage
                   src="/profile-picture-converted.jpg"
                   alt="Mohd Farhan Jafri"
+                  className="object-cover"
                 />
-                <AvatarFallback className="text-2xl font-bold">MFJ</AvatarFallback>
+                <AvatarFallback className="text-3xl md:text-4xl font-bold">MFJ</AvatarFallback>
               </Avatar>
             </div>
             
@@ -94,30 +95,32 @@ const Hero = () => {
           </div>
           
           {/* Company Links */}
-          <div className="flex justify-center items-center gap-6 pt-4">
+          <div className="flex flex-col items-center gap-4 pt-6">
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
               <Briefcase className="h-4 w-4" />
               <span>Previously worked at:</span>
             </div>
-            <div className="flex gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hover:bg-primary/10 transition-all duration-300"
+            <div className="flex gap-6 items-center">
+              <button
+                className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 p-4 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 onClick={() => window.open('https://aquera.com/', '_blank')}
               >
-                <Cpu className="h-5 w-5 mr-2 text-blue-400" />
-                AqueraLabs
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hover:bg-primary/10 transition-all duration-300"
+                <img
+                  src="/aquera_logo.jpeg"
+                  alt="AqueraLabs"
+                  className="h-8 w-auto object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                />
+              </button>
+              <button
+                className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 p-4 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 onClick={() => window.open('https://www.hood.live/', '_blank')}
               >
-                <Video className="h-5 w-5 mr-2 text-purple-400" />
-                Hood
-              </Button>
+                <img
+                  src="/joinhoodapp_logo.jpeg"
+                  alt="Hood"
+                  className="h-8 w-auto object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                />
+              </button>
             </div>
           </div>
           
