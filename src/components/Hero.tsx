@@ -15,16 +15,16 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen relative flex items-center justify-center bg-gradient-hero overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center space-y-8">
-          <div className="space-y-4">
+
+      <div className="container mx-auto px-4 py-8 md:py-16 relative z-10">
+        <div className="text-center space-y-6 md:space-y-8">
+          <div className="space-y-6 md:space-y-4">
             {/* Profile Picture */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mt-8 mb-8 md:mt-0 md:mb-8">
               <Avatar className="w-40 h-40 md:w-48 md:h-48 border-4 border-primary/30 shadow-glow hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
                 <AvatarImage
                   src="/profile-picture-converted.jpg"
@@ -35,20 +35,20 @@ const Hero = () => {
               </Avatar>
             </div>
             
-            <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm">
+            <Badge variant="secondary" className="mb-4 md:mb-6 px-4 py-2 text-sm mx-4">
               Available for New Opportunities
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-float">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-float px-4">
               Mohd Farhan Jafri
             </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Backend Engineer specializing in scalable systems, AI integration, 
+
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto px-4">
+              Backend Engineer specializing in scalable systems, AI integration,
               and high-performance applications
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-3 mt-6">
+
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-4 md:mt-6 px-4">
               {['Node.js', 'NestJS', 'Redis', 'AWS', 'ElasticSearch'].map((tech) => (
                 <Badge key={tech} variant="outline" className="px-3 py-1">
                   {tech}
@@ -57,9 +57,9 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 md:mt-8">
+            <Button
+              size="lg"
               className="bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all duration-300"
               onClick={() => scrollToSection('contact')}
             >
@@ -95,12 +95,12 @@ const Hero = () => {
           </div>
           
           {/* Company Links */}
-          <div className="flex flex-col items-center gap-4 pt-6">
+          <div className="flex flex-col items-center gap-4 pt-8 md:pt-6 pb-8 md:pb-0">
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
               <Briefcase className="h-4 w-4" />
               <span>Previously worked at:</span>
             </div>
-            <div className="flex gap-6 items-center">
+            <div className="flex gap-4 md:gap-6 items-center">
               <button
                 className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 p-4 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 onClick={() => window.open('https://aquera.com/', '_blank')}
