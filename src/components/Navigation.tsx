@@ -33,32 +33,32 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+      isScrolled ? 'bg-background/90 backdrop-blur-md border-b border-border shadow-sm' : 'bg-background/40 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             className="text-xl hover:bg-transparent px-0 text-foreground"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span className="font-serif italic text-2xl font-normal lowercase tracking-normal">farhan jafri</span>
           </Button>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
-                className="text-muted-foreground hover:text-primary transition-colors font-sans text-xs uppercase tracking-widest hover:bg-transparent"
+                className="text-foreground hover:text-primary transition-colors font-sans text-xs uppercase tracking-widest font-semibold hover:bg-transparent"
                 onClick={() => scrollToSection(item.id)}
               >
                 {item.name}
               </Button>
             ))}
           </div>
-          
+
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -69,7 +69,7 @@ const Navigation = () => {
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
-        
+
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
@@ -78,7 +78,7 @@ const Navigation = () => {
                 <Button
                   key={item.id}
                   variant="ghost"
-                  className="w-full text-left justify-start text-muted-foreground hover:text-primary font-sans text-xs uppercase tracking-widest hover:bg-transparent"
+                  className="w-full text-left justify-start text-foreground hover:text-primary font-sans text-xs uppercase tracking-widest font-semibold hover:bg-transparent"
                   onClick={() => scrollToSection(item.id)}
                 >
                   {item.name}
