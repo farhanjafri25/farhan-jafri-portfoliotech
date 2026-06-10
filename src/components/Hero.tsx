@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Briefcase } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import heroImage from "@/assets/hero_image.png";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -14,6 +15,18 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen relative flex items-center justify-center bg-background bg-grid-pattern overflow-hidden border-b border-border">
+      {/* Sleek background image blending into the warm background */}
+      <div 
+        className="absolute inset-0 opacity-[0.40] pointer-events-none select-none mix-blend-multiply"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)',
+        }}
+      />
+      
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="text-center space-y-8 md:space-y-10">
           <div className="space-y-6">
