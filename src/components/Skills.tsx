@@ -84,25 +84,25 @@ const Skills = () => {
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-4xl font-serif font-normal italic mb-4">Technical Skills</h2>
+          <p className="text-xl text-muted-foreground font-sans">
             Expertise across the full backend technology stack
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-card/50 backdrop-blur border-border shadow-card hover:shadow-glow transition-all duration-300">
+            <Card key={index} className="bg-card border-border shadow-card hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <category.icon className="h-6 w-6 text-primary" />
+                <CardTitle className="flex items-center gap-3 text-xl font-serif font-normal italic text-foreground">
+                  <category.icon className="h-5 w-5 text-primary" />
                   {category.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {category.skills.map((skill, idx) => (
-                    <div key={idx} className="flex justify-between items-center py-2">
+                    <div key={idx} className="flex justify-between items-center py-2 font-sans">
                       <span className="text-sm font-medium">{skill.name}</span>
                       <div className="flex items-center gap-2">
                         <div className="flex gap-1">
@@ -120,35 +120,35 @@ const Skills = () => {
           ))}
         </div>
         
-        <Card className="bg-card/50 backdrop-blur border-border shadow-card">
+        <Card className="bg-card border-border shadow-card">
           <CardHeader>
-            <CardTitle className="text-center text-2xl">Specializations & Achievements</CardTitle>
+            <CardTitle className="text-center text-2xl font-serif font-normal italic text-foreground">Specializations & Achievements</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-sans">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">150k+</div>
-                <div className="text-muted-foreground">Concurrent Requests Handled</div>
+                <div className="text-muted-foreground text-sm">Concurrent Requests Handled</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">40%</div>
-                <div className="text-muted-foreground">Build Time Reduction</div>
+                <div className="text-muted-foreground text-sm">Build Time Reduction</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">60%</div>
-                <div className="text-muted-foreground">Cloud Cost Optimization</div>
+                <div className="text-muted-foreground text-sm">Cloud Cost Optimization</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">20ms</div>
-                <div className="text-muted-foreground">Search Latency Achieved</div>
+                <div className="text-muted-foreground text-sm">Search Latency Achieved</div>
               </div>
             </div>
             
             <div className="mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-center">Key Competencies</h4>
+              <h4 className="text-sm font-semibold mb-4 text-center uppercase tracking-wider text-foreground/80 font-sans">Key Competencies</h4>
               <div className="flex flex-wrap justify-center gap-2">
                 {certifications.map((cert, index) => (
-                  <Badge key={index} variant="secondary" className="px-3 py-1">
+                  <Badge key={index} variant="outline" className="bg-background border-border text-foreground/80 px-3 py-1 font-sans">
                     {cert}
                   </Badge>
                 ))}

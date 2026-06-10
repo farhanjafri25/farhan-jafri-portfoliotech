@@ -77,42 +77,42 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-secondary">
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-4xl font-serif font-normal italic mb-4">Get In Touch</h2>
+          <p className="text-xl text-muted-foreground font-sans">
             Ready to collaborate on your next backend project
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-            <Card className="bg-card/50 backdrop-blur border-border shadow-card">
+            <Card className="bg-card border-border shadow-card">
               <CardHeader>
-                <CardTitle className="text-xl">Contact Information</CardTitle>
+                <CardTitle className="text-xl font-serif font-normal italic text-foreground">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 font-sans">
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
-                    <div className="font-medium">Email</div>
+                    <div className="font-medium text-sm text-foreground">Email</div>
                     <div className="text-muted-foreground text-sm">{CONTACT_INFO.email}</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 font-sans">
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
-                    <div className="font-medium">Phone</div>
+                    <div className="font-medium text-sm text-foreground">Phone</div>
                     <div className="text-muted-foreground text-sm">+91 95823 28439</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 font-sans">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
-                    <div className="font-medium">Location</div>
+                    <div className="font-medium text-sm text-foreground">Location</div>
                     <div className="text-muted-foreground text-sm">{CONTACT_INFO.location}</div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="hover:bg-primary/10"
+                      className="border-border text-muted-foreground hover:text-foreground hover:bg-background transition-colors"
                       onClick={() => window.open(SOCIAL_LINKS.github, '_blank')}
                     >
                       <Github className="h-5 w-5" />
@@ -130,7 +130,7 @@ const Contact = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="hover:bg-primary/10"
+                      className="border-border text-muted-foreground hover:text-foreground hover:bg-background transition-colors"
                       onClick={() => window.open(SOCIAL_LINKS.linkedin, '_blank')}
                     >
                       <Linkedin className="h-5 w-5" />
@@ -138,7 +138,7 @@ const Contact = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="hover:bg-primary/10"
+                      className="border-border text-muted-foreground hover:text-foreground hover:bg-background transition-colors"
                       onClick={() => window.open(`mailto:${SOCIAL_LINKS.email}`, '_blank')}
                     >
                       <Mail className="h-5 w-5" />
@@ -146,9 +146,9 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="pt-4">
-                  <h4 className="font-medium mb-3">Current Status</h4>
-                  <Badge variant="secondary" className="bg-green-500/10 text-green-400 border-green-500/20">
+                <div className="pt-4 font-sans">
+                  <h4 className="font-semibold mb-3 text-xs uppercase tracking-wider text-foreground/80">Current Status</h4>
+                  <Badge variant="outline" className="bg-emerald-500/10 text-emerald-800 border-emerald-500/20 px-3 py-1 text-xs">
                     Available for Opportunities
                   </Badge>
                 </div>
@@ -157,66 +157,66 @@ const Contact = () => {
           </div>
           
           <div className="lg:col-span-2">
-            <Card className="bg-card/50 backdrop-blur border-border shadow-card">
+            <Card className="bg-card border-border shadow-card">
               <CardHeader>
-                <CardTitle className="text-xl">Send a Message</CardTitle>
+                <CardTitle className="text-xl font-serif font-normal italic text-foreground">Send a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6 font-sans">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Name</label>
+                      <label className="text-sm font-medium mb-2 block text-foreground/80">Name</label>
                       <Input
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Your Name"
-                        className="bg-input/50"
+                        className="bg-background border-border"
                         required
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Email</label>
+                      <label className="text-sm font-medium mb-2 block text-foreground/80">Email</label>
                       <Input
                         name="email"
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your.email@example.com"
-                        className="bg-input/50"
+                        className="bg-background border-border"
                         required
                       />
                     </div>
                   </div>
-
+ 
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Subject</label>
+                    <label className="text-sm font-medium mb-2 block text-foreground/80">Subject</label>
                     <Input
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       placeholder="Project Discussion"
-                      className="bg-input/50"
+                      className="bg-background border-border"
                       required
                     />
                   </div>
-
+ 
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Message</label>
+                    <label className="text-sm font-medium mb-2 block text-foreground/80">Message</label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell me about your project requirements..."
-                      className="bg-input/50 min-h-[120px]"
+                      className="bg-background border-border min-h-[120px]"
                       required
                     />
                   </div>
-
+ 
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/95 hover:scale-[1.02] shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-sans text-sm tracking-wider uppercase py-5"
                   >
                     {isLoading ? (
                       <>
@@ -237,17 +237,17 @@ const Contact = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Card className="bg-card/50 backdrop-blur border-border shadow-card inline-block">
+          <Card className="bg-card border-border shadow-card inline-block">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-2">Looking for a Backend Engineer?</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-xl font-serif font-normal italic mb-2 text-foreground">Looking for a Backend Engineer?</h3>
+              <p className="text-muted-foreground text-sm mb-4 font-sans leading-relaxed max-w-xl">
                 I'm experienced in building scalable systems that handle high traffic and complex data processing.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                <Badge variant="outline">Node.js Expert</Badge>
-                <Badge variant="outline">Scalable Architecture</Badge>
-                <Badge variant="outline">AI Integration</Badge>
-                <Badge variant="outline">Performance Optimization</Badge>
+                <Badge variant="outline" className="bg-background border-border text-foreground/85 font-sans px-2.5 py-0.5">Node.js Expert</Badge>
+                <Badge variant="outline" className="bg-background border-border text-foreground/85 font-sans px-2.5 py-0.5">Scalable Architecture</Badge>
+                <Badge variant="outline" className="bg-background border-border text-foreground/85 font-sans px-2.5 py-0.5">AI Integration</Badge>
+                <Badge variant="outline" className="bg-background border-border text-foreground/85 font-sans px-2.5 py-0.5">Performance Optimization</Badge>
               </div>
             </CardContent>
           </Card>

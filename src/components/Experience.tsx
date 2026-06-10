@@ -39,30 +39,30 @@ const Experience = () => {
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-4xl font-serif font-normal italic mb-4">Professional Experience</h2>
+          <p className="text-xl text-muted-foreground font-sans">
             Building scalable solutions and driving innovation in backend engineering
           </p>
         </div>
         
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-card/50 backdrop-blur border-border shadow-card hover:shadow-glow transition-all duration-300">
+            <Card key={index} className="bg-card border-border shadow-card hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <CardTitle className="text-2xl text-primary mb-2">{exp.position}</CardTitle>
-                    <div className="flex items-center gap-2 text-foreground font-semibold mb-2">
-                      <Building className="h-4 w-4" />
+                    <CardTitle className="text-2.5xl font-serif font-normal italic text-primary mb-2">{exp.position}</CardTitle>
+                    <div className="flex items-center gap-2 text-foreground font-semibold mb-2 font-sans">
+                      <Building className="h-4 w-4 text-muted-foreground" />
                       {exp.company}
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row gap-4 text-muted-foreground text-sm font-sans">
                       <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4" />
+                        <Calendar className="h-4 w-4 text-muted-foreground/60" />
                         {exp.duration}
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-4 w-4 text-muted-foreground/60" />
                         {exp.location}
                       </div>
                     </div>
@@ -73,11 +73,11 @@ const Experience = () => {
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold mb-3 text-foreground">Key Achievements:</h4>
-                    <ul className="space-y-2">
+                    <h4 className="font-semibold mb-3 text-foreground font-sans text-sm uppercase tracking-wider">Key Achievements:</h4>
+                    <ul className="space-y-3">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <li key={idx} className="flex items-start gap-3 text-muted-foreground font-sans">
+                          <div className="w-1.5 h-1.5 bg-primary/70 rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-sm leading-relaxed">{achievement}</span>
                         </li>
                       ))}
@@ -85,10 +85,10 @@ const Experience = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold mb-3 text-foreground">Technologies Used:</h4>
+                    <h4 className="font-semibold mb-3 text-foreground font-sans text-sm uppercase tracking-wider">Technologies Used:</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
+                        <Badge key={idx} variant="outline" className="bg-background border-border text-foreground/80 text-xs px-2.5 py-0.5">
                           {tech}
                         </Badge>
                       ))}

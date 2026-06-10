@@ -39,19 +39,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <Button 
             variant="ghost" 
-            className="text-xl font-bold text-primary hover:bg-transparent"
+            className="text-xl hover:bg-transparent px-0 text-foreground"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            Farhan Jafri
+            <span className="font-serif italic text-2xl font-normal lowercase tracking-normal">farhan jafri</span>
           </Button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors font-sans text-xs uppercase tracking-widest hover:bg-transparent"
                 onClick={() => scrollToSection(item.id)}
               >
                 {item.name}
@@ -78,7 +78,7 @@ const Navigation = () => {
                 <Button
                   key={item.id}
                   variant="ghost"
-                  className="w-full text-left justify-start text-muted-foreground hover:text-primary"
+                  className="w-full text-left justify-start text-muted-foreground hover:text-primary font-sans text-xs uppercase tracking-widest hover:bg-transparent"
                   onClick={() => scrollToSection(item.id)}
                 >
                   {item.name}
