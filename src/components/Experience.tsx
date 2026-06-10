@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Building } from "lucide-react";
+import experienceImage from "@/assets/experience_image.png";
 
 const Experience = () => {
   const experiences = [
@@ -36,8 +37,20 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 relative overflow-hidden">
+      {/* Sleek background image blending into the experience section */}
+      <div 
+        className="absolute inset-0 opacity-[0.50] pointer-events-none select-none mix-blend-multiply"
+        style={{
+          backgroundImage: `url(${experienceImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to bottom, transparent, black 30%, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 30%, black 70%, transparent 100%)',
+        }}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-normal italic mb-4">Professional Experience</h2>
           <p className="text-xl text-muted-foreground font-sans">
