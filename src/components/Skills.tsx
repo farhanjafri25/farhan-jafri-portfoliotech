@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Database, Cloud, Wrench, Star } from "lucide-react";
+import techSkillsImage from "@/assets/tech_skills.png";
 
 const Skills = () => {
   // Helper function to convert percentage to star rating (1-5 stars)
@@ -81,8 +82,20 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Sleek background image blending into the skills section */}
+      <div 
+        className="absolute inset-0 opacity-[0.40] pointer-events-none select-none mix-blend-multiply"
+        style={{
+          backgroundImage: `url(${techSkillsImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to bottom, transparent, black 30%, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 30%, black 70%, transparent 100%)',
+        }}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-normal italic mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground font-sans">
