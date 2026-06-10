@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Send, Loader2 } from "lucide-rea
 import { SOCIAL_LINKS, CONTACT_INFO } from "@/lib/constants";
 import { sendContactEmail, type EmailData } from "@/api/send-email";
 import { useToast } from "@/hooks/use-toast";
+import footerImage from "@/assets/footer_image.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState<EmailData>({
@@ -77,8 +78,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Sleek background image blending into the contact section */}
+      <div 
+        className="absolute inset-0 opacity-[0.30] pointer-events-none select-none mix-blend-multiply"
+        style={{
+          backgroundImage: `url(${footerImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+          maskImage: 'linear-gradient(to top, black 50%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to top, black 50%, transparent 100%)',
+        }}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-normal italic mb-4">Get In Touch</h2>
           <p className="text-xl text-muted-foreground font-sans">
